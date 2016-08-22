@@ -75,14 +75,14 @@ class GameScene: SKScene {
             //Imgs.append(SKSpriteNode(imageNamed:"png/c0" + String(i)))
             Imgs.append(SKSpriteNode(imageNamed:"png/z01"))
  
-            let Xx :Double = 5.0 + Double(i*150) - 75
+            let Xx :Double = 5.0 + Double(i*165) - 65
             let Yy :Double = 100.0 //+ Double(i*20)
             
             Imgs[i].position = CGPoint(x:Xx,y:Yy)
             
             
-            Imgs[i].xScale = 0.9
-            Imgs[i].yScale = 0.6
+            Imgs[i].xScale = 0.8
+            Imgs[i].yScale = 0.45
             
             self.addChild(Imgs[i])
             Imgs[i].name = String(i)

@@ -17,7 +17,7 @@
 		78EC08471D68015B003E83EA /* GameBasic02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC08461D68015B003E83EA /* GameBasic02Tests.swift */; };
 		78EC08521D68015B003E83EA /* GameBasic02UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC08511D68015B003E83EA /* GameBasic02UITests.swift */; };
 		78EC08621D681B0F003E83EA /* Playcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC08611D681B0F003E83EA /* Playcard.swift */; };
-		78FD001B1D69E3B0004B6A58 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 78FD001A1D69E3B0004B6A58 /* png */; };
+		847972511D6B37E1005B4225 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 847972501D6B37E1005B4225 /* png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		78EC08511D68015B003E83EA /* GameBasic02UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBasic02UITests.swift; sourceTree = "<group>"; };
 		78EC08531D68015B003E83EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78EC08611D681B0F003E83EA /* Playcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playcard.swift; sourceTree = "<group>"; };
-		78FD001A1D69E3B0004B6A58 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = ../../../../Pictures/trump/png; sourceTree = "<group>"; };
+		847972501D6B37E1005B4225 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = ../../../../Downloads/trump/png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 		78EC082C1D68015A003E83EA /* GameBasic02 */ = {
 			isa = PBXGroup;
 			children = (
-				78FD001A1D69E3B0004B6A58 /* png */,
+				847972501D6B37E1005B4225 /* png */,
 				78EC082D1D68015A003E83EA /* AppDelegate.swift */,
 				78EC082F1D68015A003E83EA /* GameScene.sks */,
 				78EC08311D68015A003E83EA /* GameScene.swift */,
@@ -240,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FD001B1D69E3B0004B6A58 /* png in Resources */,
+				847972511D6B37E1005B4225 /* png in Resources */,
 				78EC08301D68015A003E83EA /* GameScene.sks in Resources */,
 				78EC083C1D68015A003E83EA /* LaunchScreen.storyboard in Resources */,
 				78EC08391D68015A003E83EA /* Assets.xcassets in Resources */,
