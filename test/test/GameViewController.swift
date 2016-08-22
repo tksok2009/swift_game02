@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  GameBasic02
+//  test
 //
-//  Created by toysking on 2016/08/20.
+//  Created by toysking on 2016/08/22.
 //  Copyright (c) 2016年 toysking. All rights reserved.
 //
 
@@ -11,10 +11,9 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let scene = GameScene(fileNamed:"GameScene") {
             // Configure the view.
             let skView = self.view as! SKView
@@ -25,13 +24,11 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            //scene.scaleMode = .AspectFill
-            scene.position = CGPointMake(0, 0)
-        
+            scene.scaleMode = .AspectFill
+            
             skView.presentScene(scene)
         }
     }
- 
 
     override func shouldAutorotate() -> Bool {
         return true
