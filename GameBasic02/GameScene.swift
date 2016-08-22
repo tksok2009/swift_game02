@@ -71,18 +71,18 @@ class GameScene: SKScene {
         Imgs = [SKSpriteNode(imageNamed:"png/z01")]
         
         // 768 / 12*60 / 300 * 200 /
-        for i in 1...12{
+        for i in 1...6{
             //Imgs.append(SKSpriteNode(imageNamed:"png/c0" + String(i)))
             Imgs.append(SKSpriteNode(imageNamed:"png/z01"))
  
-            let Xx :Double = 300.0 + Double(i*30)
+            let Xx :Double = 5.0 + Double(i*150) - 75
             let Yy :Double = 100.0 //+ Double(i*20)
             
             Imgs[i].position = CGPoint(x:Xx,y:Yy)
             
             
-            Imgs[i].xScale = 0.3
-            Imgs[i].yScale = 0.3
+            Imgs[i].xScale = 0.9
+            Imgs[i].yScale = 0.6
             
             self.addChild(Imgs[i])
             Imgs[i].name = String(i)
@@ -204,6 +204,12 @@ class GameScene: SKScene {
                 var ss = node?.name
                 print(ss!)
                 
+                if Int(ss!) > 0 {
+                let Texture = SKTexture(imageNamed: "png/c0" + String(ss!))
+
+                let ii = Int(ss!)
+                Imgs[ii!].texture = Texture
+                }
             }
             
             
