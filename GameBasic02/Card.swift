@@ -22,12 +22,19 @@ class Card: SKSpriteNode {
         super.init(texture: Texture, color: UIColor.blueColor(), size: CGSizeMake(300, 200))
         self.position = CGPointMake(0, 0)
         self.anchorPoint = CGPointMake(0, 0)
-        self.name = "0"
+        //self.name = "0"
         self.ReverseCount = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func SetName(named: String){
+        print(named)
+        self.name = named;
+        let Texture = SKTexture(imageNamed: "png/c0" + named)
+        self.texture = Texture;
     }
     
     func SetPosit(Xx: Int, Yy: Int){
@@ -44,7 +51,7 @@ class Card: SKSpriteNode {
         self.ReverseCount = 1
         } else {
         
-        let Texture = SKTexture(imageNamed: "png/c01")
+        let Texture = SKTexture(imageNamed: "png/c0" + self.name!)
         self.texture = Texture;
             self.ReverseCount = 0
         }

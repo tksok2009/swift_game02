@@ -35,9 +35,19 @@ class GameScene: SKScene {
         
         cards[0].setScene(self)
         cards[0].SetPosit(150,Yy:200)
+        cards[0].SetName("1")
+        //self.addChild(cards[0])
 
-        self.addChild(cards[0])
+        
+        for i in 1...6{
+            let card = Card()
+            cards.append(card)
+            cards[i].setScene(self)
+            cards[i].SetPosit(10 + (i * 165), Yy: 100)
+            cards[i].SetName(String(i))
 
+            self.addChild(cards[i])
+        }
         
         //Imgs = [SKSpriteNode(imageNamed:"png/z01")]
         // 768 / 12*60 / 300 * 200 /
@@ -108,7 +118,6 @@ class GameScene: SKScene {
                 if Int(ss!) >= 0 {
                 let ii = Int(ss!)
                 cards[ii!].ReverseCard()
-                    
                     
                 }
             }
