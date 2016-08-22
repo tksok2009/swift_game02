@@ -9,16 +9,17 @@
 import SpriteKit
 
 
-var myImage :SKSpriteNode!
-var myImage2 :SKSpriteNode!
+//var myImage :SKSpriteNode!
+//var myImage2 :SKSpriteNode!
 
-var Imgs :Array<SKSpriteNode>! = []
-
-var count :Int = 0
+//var Imgs :Array<SKSpriteNode>! = []
 
 
 class GameScene: SKScene {
-    
+ 
+    var cards :Array<Card>! = []
+    var count :Int = 0
+  
     
     override func didMoveToView(view: SKView) {
         
@@ -28,11 +29,19 @@ class GameScene: SKScene {
         self.name = "seennode"
         
         
+        // 敵の生成。
+        let card = Card()
+        cards = [card]
         
+        cards[0].setScene(self)
+        cards[0].SetPosit(150,Yy:200)
 
-        Imgs = [SKSpriteNode(imageNamed:"png/z01")]
+        self.addChild(cards[0])
+
         
+        //Imgs = [SKSpriteNode(imageNamed:"png/z01")]
         // 768 / 12*60 / 300 * 200 /
+        /*
         for i in 1...6{
             //Imgs.append(SKSpriteNode(imageNamed:"png/c0" + String(i)))
             Imgs.append(SKSpriteNode(imageNamed:"png/z01"))
@@ -50,7 +59,7 @@ class GameScene: SKScene {
             Imgs[i].name = String(i)
             
         }
-
+        */
 
         
         
@@ -59,7 +68,7 @@ class GameScene: SKScene {
         
         // prepare array of playcard data
         let playcard = Playcard()
-        var card1 = playcard.CreateArray("c")
+        let card1 = playcard.CreateArray("c")
         print(card1)
         
         
@@ -88,6 +97,7 @@ class GameScene: SKScene {
             print(touchlocation)
             
             // タッチ位置にあったNode.
+            
             var node : SKNode? = self.nodeAtPoint(touchlocation)
             
             
@@ -95,11 +105,11 @@ class GameScene: SKScene {
                 var ss = node?.name
                 print(ss!)
                 
-                if Int(ss!) > 0 {
-                let Texture = SKTexture(imageNamed: "png/c0" + String(ss!))
-
+                if Int(ss!) >= 0 {
                 let ii = Int(ss!)
-                Imgs[ii!].texture = Texture
+                cards[ii!].ReverseCard()
+                    
+                    
                 }
             }
             

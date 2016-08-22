@@ -18,6 +18,7 @@
 		78EC08521D68015B003E83EA /* GameBasic02UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC08511D68015B003E83EA /* GameBasic02UITests.swift */; };
 		78EC08621D681B0F003E83EA /* Playcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC08611D681B0F003E83EA /* Playcard.swift */; };
 		847972511D6B37E1005B4225 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 847972501D6B37E1005B4225 /* png */; };
+		847972531D6B3B48005B4225 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847972521D6B3B48005B4225 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		78EC08531D68015B003E83EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78EC08611D681B0F003E83EA /* Playcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playcard.swift; sourceTree = "<group>"; };
 		847972501D6B37E1005B4225 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = ../../../../Downloads/trump/png; sourceTree = "<group>"; };
+		847972521D6B3B48005B4225 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				78EC082F1D68015A003E83EA /* GameScene.sks */,
 				78EC08311D68015A003E83EA /* GameScene.swift */,
 				78EC08611D681B0F003E83EA /* Playcard.swift */,
+				847972521D6B3B48005B4225 /* Card.swift */,
 				78EC08331D68015A003E83EA /* GameViewController.swift */,
 				78EC08351D68015A003E83EA /* Main.storyboard */,
 				78EC08381D68015A003E83EA /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			files = (
 				78EC08321D68015A003E83EA /* GameScene.swift in Sources */,
 				78EC08621D681B0F003E83EA /* Playcard.swift in Sources */,
+				847972531D6B3B48005B4225 /* Card.swift in Sources */,
 				78EC08341D68015A003E83EA /* GameViewController.swift in Sources */,
 				78EC082E1D68015A003E83EA /* AppDelegate.swift in Sources */,
 			);
