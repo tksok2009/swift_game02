@@ -13,8 +13,8 @@ class GameScene: SKScene {
  
     var cards :Array<Card>! = []
     var count :Int = 1
-    var card1 :Int!
-    var card2 :Int!
+    var card1 :Int! = 0
+    var card2 :Int! = 100
     
     
     
@@ -104,10 +104,14 @@ class GameScene: SKScene {
                 if ss! != "seennode" {
                     
                     
+                    
+                    
+                    
                     let ii = Int(ss!)
                     //print(ii)
 
                     
+                if self.card1 != ii {
                     
                     if self.count == 1 {
                         
@@ -147,6 +151,10 @@ class GameScene: SKScene {
 
                     
                     }
+                    
+                }
+                    
+                    
                     
                     
                 }
