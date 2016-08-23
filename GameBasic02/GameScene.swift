@@ -48,7 +48,7 @@ class GameScene: SKScene {
                 cards[h].setScene(self)
                 
                 //cards[i].SetPosit(10 + ((i-1) * 155), Yy: 100)
-                cards[h].SetPosit( 10 + ((u-1) * 155), Yy: (100 * (e-1) ) )
+                cards[h].SetPosit( 20 + ((u-1) * 165), Yy: (30 + 90 * (e-1) ) )
                 
                 cards[h].SetName(i,janru: jj[k],ids: h)
                 
