@@ -6,11 +6,12 @@
 //  Copyright © 2016年 toysking. All rights reserved.
 //
 import SpriteKit
+import Foundation
 
 class Card: SKSpriteNode {
     
     var gameScene: SKScene!
-    var ReverseCount: Int!
+    var ReverseCount: Int! = 0
     var Janruname: String!
     var Numbers: Int!
     
@@ -25,7 +26,7 @@ class Card: SKSpriteNode {
         self.position = CGPointMake(0, 0)
         self.anchorPoint = CGPointMake(0, 0)
         //self.name = "0"
-        self.ReverseCount = 0
+        //self.ReverseCount = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +52,28 @@ class Card: SKSpriteNode {
         self.position = CGPointMake(x,y)
     }
     
-    func ReverseCard() {
+
+
+    
+    func Resetcard() {
+    
+        let Texture = SKTexture(imageNamed: "png/z01")
+        self.texture = Texture;
+        self.ReverseCount = 0
+      
+    }
+
+    
+    
+    func ReverseCard(count: Int) {
+        
+        if count == 1 {
+            print("1maime")
+            
+        }else if count == 2 {
+            print("2maime")
+        }
+        
         
         if self.ReverseCount == 0 {
             let janru = self.Janruname
@@ -59,6 +81,7 @@ class Card: SKSpriteNode {
             let Texture = SKTexture(imageNamed: "png/" + janru + "0" + numb)
             self.texture = Texture;
             self.ReverseCount = 1
+            
         } else {
             let Texture = SKTexture(imageNamed: "png/z01")
             self.texture = Texture;
@@ -66,5 +89,13 @@ class Card: SKSpriteNode {
         }
         
     }
+    
+ 
+    
+    
+    
+    
+    
+    
     
 }

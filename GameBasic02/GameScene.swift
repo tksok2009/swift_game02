@@ -7,14 +7,14 @@
 //
 
 import SpriteKit
-
+import Foundation
 
 class GameScene: SKScene {
  
     var cards :Array<Card>! = []
-    var count :Int = 0
-  
-    
+    var count :Int = 1
+    var card1 :Int!
+    var card2 :Int!
     
     
     
@@ -85,24 +85,72 @@ class GameScene: SKScene {
  
         for touch in touches {
             let touchlocation = touch.locationInNode(self)
-            
-            
-            print(touchlocation)
+            //print(touchlocation)
+
             
             // タッチ位置にあったNode.
+            let node : SKNode? = self.nodeAtPoint(touchlocation)
             
-            var node : SKNode? = self.nodeAtPoint(touchlocation)
+            
+            
+            
             
             
             if node != nil {
-                var ss = node?.name
+                let ss = node?.name
                 
                 //print(ss!)
                 
-                if Int(ss!) >= 0 {
-                let ii = Int(ss!)
-                cards[ii!].ReverseCard()
+                if ss! != "seennode" {
+                    
+                    
+                    let ii = Int(ss!)
+                    //print(ii)
+
+                    
+                    
+                    if self.count == 1 {
+                        
+                        
+                        cards[ii!].ReverseCard(self.count)
+                        self.count = self.count + 1
+                        self.card1 = ii!
+                        
+                        
+                    }else if self.count == 2{
+
+                        cards[ii!].ReverseCard(self.count)
+                        self.count = self.count + 1
+                        self.card2 = ii!
+                        let ca0 = self.card1
+                        
+                        
+                        
+                        if self.card2 == ca0 {
+                            print("hit!!")
+                        }else{
+                            print("not!")
+                        }
+
+                    
+                        
+                    //}else{
+                        self.count = 4
+                        //リセット
+                        var timer:NSTimer = NSTimer()
+                        timer = NSTimer.scheduledTimerWithTimeInterval(1.0,
+                                                                       target: self,
+                                                                       selector: "changeView",
+                                                                       userInfo: nil,
+                                                                       repeats: false)
+                        
+
+                    
+                    }
+                    
+                    
                 }
+                
             }
             
             
@@ -115,7 +163,20 @@ class GameScene: SKScene {
     
    
     
-    
+    func changeView() {
+        let ca1 = self.card1
+        let ca2 = self.card2
+        
+        print(ca1)
+        print(ca2)
+        
+        cards[ca1].Resetcard();
+        cards[ca2].Resetcard();
+        
+        self.count = 1
+        
+        //self.performSegueWithIdentifier("toGreen", sender: nil)
+    }
     
     
 
