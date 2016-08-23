@@ -19,7 +19,7 @@ class Card: SKSpriteNode {
     
     init() {
         let Texture = SKTexture(imageNamed: "png/c01")
-        super.init(texture: Texture, color: UIColor.blueColor(), size: CGSizeMake(300, 200))
+        super.init(texture: Texture, color: UIColor.blueColor(), size: CGSizeMake(150, 100))
         self.position = CGPointMake(0, 0)
         self.anchorPoint = CGPointMake(0, 0)
         //self.name = "0"

@@ -21,6 +21,9 @@ class GameScene: SKScene {
     var count :Int = 0
   
     
+    
+    
+    
     override func didMoveToView(view: SKView) {
         
         self.size = self.frame.size
@@ -39,15 +42,31 @@ class GameScene: SKScene {
         //self.addChild(cards[0])
 
         
-        for i in 1...6{
-            let card = Card()
-            cards.append(card)
-            cards[i].setScene(self)
-            cards[i].SetPosit(10 + (i * 165), Yy: 100)
-            cards[i].SetName(String(i))
+        var i = 1
+        var h = 1
+        for e in 1...8 {
+            for u in 1...6{
+                
+                let card = Card()
+                cards.append(card)
+                cards[h].setScene(self)
+                
+                //cards[i].SetPosit(10 + ((i-1) * 155), Yy: 100)
+                cards[h].SetPosit( 10 + ((u-1) * 155), Yy: (100 * e ) )
+                
+                cards[h].SetName(String(i))
+                
+                self.addChild(cards[h])
 
-            self.addChild(cards[i])
+                if i > 12{
+                i = 0
+                }
+                i = i + 1
+                h = h + 1
+                
+            }
         }
+        
         
         //Imgs = [SKSpriteNode(imageNamed:"png/z01")]
         // 768 / 12*60 / 300 * 200 /
