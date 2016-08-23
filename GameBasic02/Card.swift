@@ -11,6 +11,8 @@ class Card: SKSpriteNode {
     
     var gameScene: SKScene!
     var ReverseCount: Int!
+    var Janruname: String!
+    var Numbers: Int!
     
     func setScene(scene: SKScene) {
         self.gameScene = scene
@@ -30,10 +32,16 @@ class Card: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func SetName(named: String){
-        print(named)
-        self.name = named;
-        let Texture = SKTexture(imageNamed: "png/c0" + named)
+    func SetName(named: Int,janru: String,ids: Int){
+        //print(named)
+        self.name = String(ids)
+        self.Numbers = named
+        self.Janruname = janru
+        
+        //let numbe = String(named)
+        //let Texture = SKTexture(imageNamed: "png/" + janru + "0" + numbe)
+        let Texture = SKTexture(imageNamed: "png/z01")
+        
         self.texture = Texture;
     }
     
@@ -46,13 +54,14 @@ class Card: SKSpriteNode {
     func ReverseCard() {
         
         if self.ReverseCount == 0 {
-        let Texture = SKTexture(imageNamed: "png/z01")
-        self.texture = Texture;
-        self.ReverseCount = 1
+            let janru = self.Janruname
+            let numb = String(self.Numbers)
+            let Texture = SKTexture(imageNamed: "png/" + janru + "0" + numb)
+            self.texture = Texture;
+            self.ReverseCount = 1
         } else {
-        
-        let Texture = SKTexture(imageNamed: "png/c0" + self.name!)
-        self.texture = Texture;
+            let Texture = SKTexture(imageNamed: "png/z01")
+            self.texture = Texture;
             self.ReverseCount = 0
         }
         
