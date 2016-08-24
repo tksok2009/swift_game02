@@ -16,23 +16,23 @@ class GameScene: SKScene {
     var card1 :Int! = 0
     var card2 :Int! = 100
     
-    
-    
+ 
     override func didMoveToView(view: SKView) {
         
+        //
         self.size = self.frame.size
-        
-        print(self.size)
+        //print(self.size)
         self.name = "seennode"
+        
+        
         
         
         // カードの生成。
         let card = Card()
         cards = [card]
-        
-        cards[0].setScene(self)
-        cards[0].SetPosit(150,Yy:200)
-        cards[0].SetName(1,janru: "z",ids: 0)
+        //cards[0].setScene(self)
+        //cards[0].SetPosit(150,Yy:200)
+        //cards[0].SetName(1,janru: "z",ids: 0)
         //self.addChild(cards[0])
 
         
@@ -69,9 +69,9 @@ class GameScene: SKScene {
         
         
         // prepare array of playcard data
-        let playcard = Playcard()
-        let card1 = playcard.CreateArray("c")
-        print(card1)
+        //let playcard = Playcard()
+        //let card1 = playcard.CreateArray("c")
+        //print(card1)
         
         
     
@@ -115,7 +115,7 @@ class GameScene: SKScene {
                     
                     if self.count == 1 {
                         
-                        
+                        //logic turn the card when firs
                         cards[ii!].ReverseCard(self.count)
                         self.count = self.count + 1
                         self.card1 = ii!
@@ -123,6 +123,7 @@ class GameScene: SKScene {
                         
                     }else if self.count == 2{
 
+                        //logic turn the card when second
                         cards[ii!].ReverseCard(self.count)
                         self.count = self.count + 1
                         self.card2 = ii!
@@ -130,15 +131,9 @@ class GameScene: SKScene {
                         
                         
                         
-                        if self.card2 == ca0 {
-                            print("hit!!")
-                        }else{
-                            print("not!")
-                        }
 
                     
-                        
-                    //}else{
+                        //logic reset count and wait
                         self.count = 4
                         //リセット
                         var timer:NSTimer = NSTimer()
@@ -171,9 +166,31 @@ class GameScene: SKScene {
     
    
     
+    
+    
+    
+    
     func changeView() {
+        
+        //logic check two card is the some card
         let ca1 = self.card1
         let ca2 = self.card2
+        
+        if cards[ca1].Numbers == cards[ca2].Numbers {
+            print("hit!!")
+            //sleep(1)
+            self.removeCard()
+        }else{
+            print("not!")
+        }
+        
+        // add determine at remove the card
+
+        
+        
+        
+//        let ca1 = self.card1
+//        let ca2 = self.card2
         
         print(ca1)
         print(ca2)
@@ -187,7 +204,24 @@ class GameScene: SKScene {
     }
     
     
-
+    func removeCard() {
+        let ca1 = self.card1
+        let ca2 = self.card2
+        
+        print(ca1)
+        print(ca2)
+        
+        cards[ca1].RemoveCard();
+        cards[ca2].RemoveCard();
+        
+        self.count = 1
+        
+        //self.performSegueWithIdentifier("toGreen", sender: nil)
+    }
+    
+    
+    
+    
     
     
     

@@ -91,7 +91,9 @@ class Card: SKSpriteNode {
     }
     
  
-    
+    func RemoveCard(){
+        self.removeFromParent()
+    }
     
     
     
